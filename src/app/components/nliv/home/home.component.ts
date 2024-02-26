@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  constructor() {}
+  constructor() { }
   // hasSuggestions
-  hasSuggestions = false;
+  hasSuggestions: boolean = false;
 }

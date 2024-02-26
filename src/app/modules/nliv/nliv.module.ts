@@ -10,6 +10,7 @@ import { ContactComponent } from '../../components/nliv/contact/contact.componen
 import { NotFoundComponent } from '../../components/nliv/not-found/not-found.component';
 import { Error500Component } from '../../components/nliv/error500/error500.component';
 import { SharedLayoutComponent } from '../../components/nliv/shared-layout/shared-layout.component';
+import { UserActionsComponent } from '../../components/shared/user-actions/user-actions.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { SharedLayoutComponent } from '../../components/nliv/shared-layout/share
     ContactComponent,
     NotFoundComponent,
     Error500Component,
-    SharedLayoutComponent
+    SharedLayoutComponent,
+    UserActionsComponent
   ],
   imports: [
     RouterModule,

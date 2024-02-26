@@ -1,14 +1,16 @@
 <div class="w-screen h-screen overflow-hidden flex items-center justify-center flex-col">
     <div class="w-full flex items-center justify-center p-2">
         <div></div>
-        <div class="flex-fill"></div>
+        <div class="flex-grow"></div>
         <div>
-            <!-- <app-user-actions></app-user-actions> -->
+            <app-user-actions></app-user-actions>
         </div>
     </div>
-    <div class="flex-fill"></div>
-    <div class="flex flex-col items-center justify-center gap-2 w-full">
-        <div [ngClass]="{'h-full flex items-center justify-center font-black text-[50px]': true, 'mb-[50px]': hasSuggestions}">Ramogi Ka'Onga
+    <div class="flex-grow"></div>
+    <div class="flex flex-col items-center justify-center gap-7 w-full">
+        <div
+            [ngClass]="{'h-full flex items-center justify-center font-black text-[50px]': true, 'hidden': hasSuggestions}">
+            Brwein
         </div>
         <form [ngClass]="{
             'relative border-1 border-solid flex items-center justify-center min-w-[60%] max-w-full': true,
@@ -16,7 +18,7 @@
             'rounded-full border-slate-800': !hasSuggestions
           }">
             <input #searchInput (input)="hasSuggestions = (searchInput.value ? true : false)"
-                placeholder="Search anything" class="rounded-s-full w-full h-full flex-fill py-2 px-4 outline-none" />
+                placeholder="Search anything" class="rounded-s-full w-full h-full flex-grow py-2 px-4 outline-none" />
             <span class="p-2 h-full flex items-center justify-center" role="button"><span
                     class="material-symbols-outlined">search</span></span>
 
@@ -49,7 +51,7 @@
                 role="button">map</a>
         </div>
     </div>
-    <div class="flex-fill"></div>
+    <div class="flex-grow"></div>
     <div class="w-full h-[200px] bg-slate-200">
         <div class="flex items-center justify-center h-full">
             <div class="flex items-center justify-center gap-2">
