@@ -8,12 +8,12 @@ import { NotFoundComponent } from '../../components/nliv/not-found/not-found.com
 import { Error500Component } from '../../components/nliv/error500/error500.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: '404', component: NotFoundComponent },
   { path: '500', component: Error500Component },
-  { path: '**', redirectTo: '/404' }
+  { path: '**', redirectTo: '404' }
 ];
 
 @NgModule({

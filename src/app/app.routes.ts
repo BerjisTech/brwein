@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', loadChildren: () => import('./modules/nliv/nliv.module').then(m => m.NLIVModule) },
-    { path: '**', redirectTo: '/home' }
+    { path: '', loadChildren: () => import('./modules/nliv/nliv.module').then(m => m.NLIVModule) },
+    { path: '**', redirectTo: '404' }
 ];
