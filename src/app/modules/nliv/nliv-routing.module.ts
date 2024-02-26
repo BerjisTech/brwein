@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { SharedLayoutComponent } from '../../components/nliv/shared-layout/shared-layout.component';
 import { HomeComponent } from '../../components/nliv/home/home.component';
 import { AboutComponent } from '../../components/nliv/about/about.component';
 import { ContactComponent } from '../../components/nliv/contact/contact.component';
@@ -8,12 +9,18 @@ import { NotFoundComponent } from '../../components/nliv/not-found/not-found.com
 import { Error500Component } from '../../components/nliv/error500/error500.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: '404', component: NotFoundComponent },
-  { path: '500', component: Error500Component },
-  { path: '**', redirectTo: '404' }
+  { 
+    path: '', 
+    component: SharedLayoutComponent,
+    children: [
+      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'about', component: AboutComponent },
+      { path: 'contact', component: ContactComponent },
+      { path: '404', component: NotFoundComponent },
+      { path: '500', component: Error500Component },
+      { path: '**', redirectTo: '404' }
+    ]
+  }
 ];
 
 @NgModule({
