@@ -1,3 +1,20 @@
-<div class="w-screen h-screen">
+<div class="w-screen h-screen overflow-y-auto flex items-center justify-center flex-col m-0 p-0">
+    <div class="w-full flex items-center justify-center p-2">
+        <div></div>
+        <div class="flex-grow"></div>
+        <div>
+            <app-user-actions></app-user-actions>
+        </div>
+    </div>
     <router-outlet></router-outlet>
+    <div class="w-full h-[200px] bg-slate-200">
+        <div class="flex items-center justify-center h-full">
+            <div class="flex items-center justify-center gap-2">
+                <a href="/about" class="text-decoration-none text-slate-950 hover:text-orange-500">About</a>
+                <a href="/terms" class="text-decoration-none text-slate-950 hover:text-orange-500">Terms</a>
+                <a href="/privacy" class="text-decoration-none text-slate-950 hover:text-orange-500">Privacy</a>
+                <a href="/help" class="text-decoration-none text-slate-950 hover:text-orange-500">Help</a>
+            </div>
+        </div>
+    </div>
 </div>
