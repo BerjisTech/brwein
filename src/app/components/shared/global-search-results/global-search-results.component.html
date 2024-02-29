@@ -1,0 +1,35 @@
+<div class="search-result flex p-5">
+    <div class="flex gap-2 flex-grow">
+        <div class="w-full flex flex-col">
+            <div class="flex gap-2">
+                <div *ngIf="searchResult.image">
+                    <img [src]="searchResult.image" class="w-[30px] h-[30px] rounded-full"
+                        alt="{{ searchResult.title }}">
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold"><a [href]="searchResult.url">{{ searchResult.title }}</a></span>
+                    <span>
+                        <a class="url" [href]="searchResult.url">{{ searchResult.url }}</a>
+                    </span>
+                </div>
+            </div>
+            <div class="flex flex-col items-start justify-start">
+                <p class="description">{{ searchResult.description }}</p>
+                <div class="flex w-full">
+                    <div *ngIf="searchResult.tags.length > 0" class="flex-grow">
+                        <span class="tag" *ngFor="let tag of searchResult.tags"><a [href]="'/s/a?t=' + tag">{{ tag
+                                }},&nbsp;</a></span>
+                    </div>
+                    <p class="date">{{ searchResult.date }}</p>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="searchResult.image">
+            <img [src]="searchResult.image" class="w-[100px] h-[100px] rounded-md" alt="{{ searchResult.title }}">
+        </div>
+
+
+
+    </div>
+    <div class="flex-grow"></div>
+</div>

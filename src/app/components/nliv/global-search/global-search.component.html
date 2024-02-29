@@ -1,1 +1,6 @@
-<p>global-search works!</p>
+<!-- Return global search results instances -->
+<div class="w-full h-auto">
+    <div class="flex-grow"></div>
+    <app-global-search-results *ngFor="let result of searchResults" [searchResult]="result"></app-global-search-results>
+    <div class="flex-grow"></div>
+</div>

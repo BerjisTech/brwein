@@ -12,6 +12,7 @@ import { Error500Component } from '../../components/nliv/error500/error500.compo
 import { GlobalSearchComponent } from '../../components/nliv/global-search/global-search.component';
 import { SharedLayoutComponent } from '../../components/nliv/shared-layout/shared-layout.component';
 import { UserActionsComponent } from '../../components/shared/user-actions/user-actions.component';
+import { GlobalSearchResultsComponent } from '../../components/shared/global-search-results/global-search-results.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { UserActionsComponent } from '../../components/shared/user-actions/user-
     Error500Component,
     GlobalSearchComponent,
     SharedLayoutComponent,
-    UserActionsComponent
+    UserActionsComponent,
+    GlobalSearchResultsComponent
   ],
   imports: [
     RouterModule,

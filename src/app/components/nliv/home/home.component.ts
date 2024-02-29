@@ -13,6 +13,7 @@ export class HomeComponent {
   // hasSuggestions
   hasSuggestions: boolean = false;
   suggestedStrings: string[] = [];
+  suggestion :string = '';
 
   onSearch(term: HTMLInputElement) {
     console.log(term.value);
@@ -27,6 +28,7 @@ export class HomeComponent {
   onSearchInput(event: Event) {
     const target = event.target as HTMLInputElement;
     this.suggestedStrings = [target.value, 'random1', 'random2', 'random3'];
+    this.suggestion = target.value;
   }
 
   // onSuggestionClick(suggestion) redirects to /s/suggestion
