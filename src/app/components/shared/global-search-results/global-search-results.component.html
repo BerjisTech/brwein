@@ -7,7 +7,7 @@
                         alt="{{ searchResult.title }}">
                 </div>
                 <div class="flex flex-col w-full flex-grow">
-                    <span class="font-bold"><a [href]="searchResult.url">{{ searchResult.title }}</a></span>
+                    <span class="font-bold"><a [href]="searchResult.url" target="_BLANK">{{ searchResult.title }}</a></span>
                     <span class="flex items-start justify-start w-full">
                         <a class="url flex-grow" target="_BLANK" [href]="searchResult.url">{{ searchResult.url }}</a>
                         <span class="text-slate-500 material-symbols-outlined cursor-pointer">more_vert</span>
@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="flex flex-col items-start justify-start">
-                <p class="description">{{ searchResult.description.slice(0, 100) }}<span
+                <p class="description">{{ searchResult.description.slice(0, 200) }}<span
                         class="text-slate-500">...</span></p>
                 <div class="flex w-full">
                     <div *ngIf="searchResult.tags.length > 0" class="flex-grow flex items-center justify-start gap-2">
