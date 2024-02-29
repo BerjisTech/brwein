@@ -13,6 +13,7 @@ import { GlobalSearchComponent } from '../../components/nliv/global-search/globa
 import { SharedLayoutComponent } from '../../components/nliv/shared-layout/shared-layout.component';
 import { UserActionsComponent } from '../../components/shared/user-actions/user-actions.component';
 import { GlobalSearchResultsComponent } from '../../components/shared/global-search-results/global-search-results.component';
+import { AiChatComponent } from '../../components/shared/ai-chat/ai-chat.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { GlobalSearchResultsComponent } from '../../components/shared/global-sea
     GlobalSearchComponent,
     SharedLayoutComponent,
     UserActionsComponent,
-    GlobalSearchResultsComponent
+    GlobalSearchResultsComponent,
+    AiChatComponent
   ],
   imports: [
     RouterModule,

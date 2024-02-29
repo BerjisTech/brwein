@@ -17,7 +17,7 @@ const routes: Routes = [
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'about', component: AboutComponent },
       { path: 'contact', component: ContactComponent },
-      { path: 's/:term', component: GlobalSearchComponent},
+      { path: 's/:searchTerm', component: GlobalSearchComponent},
       { path: '404', component: NotFoundComponent },
       { path: '500', component: Error500Component },
       { path: '**', redirectTo: '404' }

@@ -15,11 +15,12 @@
                 </div>
             </div>
             <div class="flex flex-col items-start justify-start">
-                <p class="description">{{ searchResult.description.slice(0, 100) }}<span class="text-slate-500">...</span></p>
+                <p class="description">{{ searchResult.description.slice(0, 100) }}<span
+                        class="text-slate-500">...</span></p>
                 <div class="flex w-full">
-                    <div *ngIf="searchResult.tags.length > 0" class="flex-grow">
-                        <span class="tag" *ngFor="let tag of searchResult.tags"><a [href]="'/s/a?t=' + tag">{{ tag
-                                }},&nbsp;</a></span>
+                    <div *ngIf="searchResult.tags.length > 0" class="flex-grow flex items-center justify-start gap-2">
+                        <span class="tag flex items-center justify-center gap-2" *ngFor="let tag of searchResult.tags"><a [href]="'/s/a?t=' + tag">{{ tag
+                                }}</a><span class="w-[3px] h-[3px] bg-slate-950 rounded-full"></span></span>
                     </div>
                     <p class="date">{{ searchResult.date }}</p>
                 </div>
@@ -32,5 +33,4 @@
 
 
     </div>
-    <div class="flex-grow"></div>
 </div>

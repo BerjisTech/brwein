@@ -40,13 +40,13 @@
 }
 
 .sticky {
-  position: sticky;
-  top: 0;
+  position: sticky !important;
+  top: 0 !important;
   &.sticky--hide {
-    transform: translateY(-100%);
+    transform: translateY(-100%) !important;
   }
   &.sticky--show {
-    transform: translateY(0);
+    transform: translateY(0) !important;
   }
 }
 
