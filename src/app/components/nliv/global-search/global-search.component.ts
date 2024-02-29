@@ -12,7 +12,7 @@ export class GlobalSearchComponent {
     {
       title: 'Title 1',
       icon: 'https://picsum.photos/200',
-      url: 'url1',
+      url: 'https://www.example.com',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et luctus enim urna non dui. Nullam sit amet lectus augue. Donec et ligula.',
       type: 'Type 1',
       date: 'Date 1',
@@ -22,7 +22,7 @@ export class GlobalSearchComponent {
     {
       title: 'Title 2',
       icon: 'https://picsum.photos/200',
-      url: 'url2',
+      url: 'https://www.example.com',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et luctus enim urna non dui. Nullam sit amet lectus augue. Donec et ligula.',
       type: 'Type 2',
       date: 'Date 2',
@@ -32,7 +32,7 @@ export class GlobalSearchComponent {
     {
       title: 'Title 3',
       icon: 'https://picsum.photos/200',
-      url: 'url3',
+      url: 'https://www.example.com',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et luctus enim urna non dui. Nullam sit amet lectus augue. Donec et ligula.',
       type: 'Type 3',
       date: 'Date 3',
