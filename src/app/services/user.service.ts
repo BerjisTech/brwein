@@ -5,8 +5,6 @@ import { User } from '../interfaces/user';
   providedIn: 'root'
 })
 export class UserService {
-  private user: User | null = null;
-  private currentUser: User | null = null;
   private guestUser: User = {
     id: '0',
     name: 'Guest',
@@ -21,12 +19,14 @@ export class UserService {
     bio: '',
     location: ''
   };
+  private user: User = this.guestUser;
+  private currentUser: User = this.guestUser;
 
   setUser(user: User) {
     this.user = user;
   }
 
-  getUser(): User | null {
+  getUser(): User {
     return this.user;
   }
 
@@ -34,7 +34,7 @@ export class UserService {
     this.currentUser = user;
   }
 
-  getCurrentUser(): User | null {
+  getCurrentUser(): User {
     return this.currentUser;
   }
 

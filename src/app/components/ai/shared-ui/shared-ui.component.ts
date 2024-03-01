@@ -34,6 +34,27 @@ export class SharedUIComponent {
         user: this.userService.getGuestUser()
       };
       this.aiChats.aiChat.push(newAiChat);
+    } else {
+      const newAiChat: AiChat = {
+        id: 'UUID-UUID-UUID-UUID-UUID',
+        ai_id: 'UUID-UUID-UUID-UUID-UUID',
+        user_id: 'UUID-UUID-UUID-UUID-UUID',
+        prompt: prompt,
+        response: 'string',
+        created_at: 'string',
+        updated_at: 'string',
+        user: this.userService.getGuestUser()
+      };
+      this.aiChats = {
+        aiChat: [newAiChat],
+        id: 'UUID-UUID-UUID-UUID-UUID',
+        title: prompt,
+        created_at: 'string',
+        updated_at: 'string',
+        user_id: 'UUID-UUID-UUID-UUID-UUID',
+        ai_id: 'UUID-UUID-UUID-UUID-UUID',
+        user: this.userService.getCurrentUser()
+      };
     }
   }
 }
