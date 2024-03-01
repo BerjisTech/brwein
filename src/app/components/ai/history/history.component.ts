@@ -15,6 +15,8 @@ export class HistoryComponent {
     private userService: UserService
   ) { }
 
+  chatsLoaded = false;
+
   aiChat: AiChat = {
     id: 'UUID-UUID-UUID-UUID-UUID',
     ai_id: 'UUID-UUID-UUID-UUID-UUID',
@@ -59,8 +61,14 @@ export class HistoryComponent {
     }
   ]
 
+  ngOnInit() {
+    this.aiService.aiChats.subscribe(chats => {
+      this.aiChats = [...chats, ...this.aiChats];
+    });
+  }
 
-  updateActiveChat(chat: any) {
+  updateActiveChat(chat: AiChats) {
     this.aiService.changeChat(chat);
+    // this.aiService.addChat(chat);
   }
 }

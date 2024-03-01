@@ -55,6 +55,7 @@ export class SharedUIComponent {
         ai_id: 'UUID-UUID-UUID-UUID-UUID',
         user: this.userService.getCurrentUser()
       };
+      this.aiService.addChat(this.aiChats);
     }
   }
 }

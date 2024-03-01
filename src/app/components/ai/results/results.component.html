@@ -1,7 +1,7 @@
-<div id="resultsBody">
-  <div>
-    <img src="{{ chat?.user?.avatar }}" alt="Avatar" class="w-10 h-10 rounded-full" />
-    {{ chat?.user_id }}
+<div class="flex items-center justify-start gap-3">
+  <img src="{{ chat?.user?.avatar }}" alt="Avatar" class="w-10 h-10 rounded-full" />
+  <div class="flex flex-col gap-3">
+    <span>{{ chat?.user_id }}</span>
+    <span>{{ chat?.prompt }}</span>
   </div>
-  {{ chat?.prompt }}
 </div>
