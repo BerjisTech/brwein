@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-chat-bar',
@@ -7,9 +7,10 @@ import { Component } from '@angular/core';
 })
 export class ChatBarComponent {
   constructor() { }
+  @Output() promptSubmit = new EventEmitter<string>();
 
-  loadResults(prompt: string) {
-    // Your code here
-    alert(prompt)
+  loadResults(event: Event, prompt: string) {
+    event.preventDefault();
+    this.promptSubmit.emit(prompt);
   }
 }
