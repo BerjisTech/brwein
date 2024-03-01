@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AiChats, AiChat } from '../../../interfaces/ai-chat';
 import { AiService } from '../../../services/ai.service';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-shared-ui',
@@ -10,10 +11,15 @@ import { AiService } from '../../../services/ai.service';
 export class SharedUIComponent {
   prompt: string = '';
   aiChats: AiChats | null = null;
+  chat: AiChat | null = null;
 
-  constructor(private aiService: AiService) {
+  constructor(
+    private aiService: AiService,
+    private userService: UserService
+  ) {
     this.aiService.currentChat.subscribe(chat => this.aiChats = chat);
   }
+  
 
   addAiChat(prompt: string) {
     if (this.aiChats) {
@@ -25,7 +31,7 @@ export class SharedUIComponent {
         response: 'string',
         created_at: 'string',
         updated_at: 'string',
-        user: 'User'
+        user: this.userService.getGuestUser()
       };
       this.aiChats.aiChat.push(newAiChat);
     }

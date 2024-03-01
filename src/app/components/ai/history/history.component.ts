@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AiChat, AiChats } from '../../../interfaces/ai-chat';
 import { AiService } from '../../../services/ai.service';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-history',
@@ -8,6 +9,11 @@ import { AiService } from '../../../services/ai.service';
   styleUrl: './history.component.scss'
 })
 export class HistoryComponent {
+
+  constructor(
+    private aiService: AiService,
+    private userService: UserService
+  ) { }
 
   aiChat: AiChat = {
     id: 'UUID-UUID-UUID-UUID-UUID',
@@ -17,7 +23,7 @@ export class HistoryComponent {
     response: 'string',
     created_at: 'string',
     updated_at: 'string',
-    user: 'User'
+    user: this.userService.getGuestUser()
   };
 
   aiChats: AiChats[] = [
@@ -29,7 +35,7 @@ export class HistoryComponent {
       user_id: 'UUID-UUID-UUID-UUID-UUID',
       ai_id: 'UUID-UUID-UUID-UUID-UUID',
       aiChat: [this.aiChat],
-      user: 'User',
+      user: this.userService.getGuestUser()
     },
     {
       id: 'UUID-UUID-UUID-UUID-UUID',
@@ -39,7 +45,7 @@ export class HistoryComponent {
       user_id: 'UUID-UUID-UUID-UUID-UUID',
       ai_id: 'UUID-UUID-UUID-UUID-UUID',
       aiChat: [this.aiChat],
-      user: 'User',
+      user: this.userService.getGuestUser()
     },
     {
       id: 'UUID-UUID-UUID-UUID-UUID',
@@ -49,11 +55,10 @@ export class HistoryComponent {
       user_id: 'UUID-UUID-UUID-UUID-UUID',
       ai_id: 'UUID-UUID-UUID-UUID-UUID',
       aiChat: [this.aiChat],
-      user: 'User',
+      user: this.userService.getGuestUser()
     }
   ]
 
-  constructor(private aiService: AiService) {}
 
   updateActiveChat(chat: any) {
     this.aiService.changeChat(chat);

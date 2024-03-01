@@ -9,7 +9,7 @@
     <div class="h-screen bg-slate-800 flex-grow p-4 flex flex-col gap-3">
         <div class="w-full">Top</div>
         <div class="w-full flex-grow">
-            <app-results *ngFor="let chat of aiChats?.aiChat" [prompt]="chat.prompt"></app-results>
+            <app-results *ngFor="let chat of aiChats?.aiChat" [chat]="chat"></app-results>
         </div>
         <div class="w-full flex items-center justify-center">
             <app-chat-bar (promptSubmit)="addAiChat($event)"></app-chat-bar>

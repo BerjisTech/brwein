@@ -1,4 +1,5 @@
 import { Component, Input} from '@angular/core';
+import { AiChat } from '../../../interfaces/ai-chat';
 
 @Component({
   selector: 'app-results',
@@ -6,5 +7,5 @@ import { Component, Input} from '@angular/core';
   styleUrls: ['./results.component.scss']
 })
 export class ResultsComponent {
-  @Input() prompt: string = '';
+  @Input() chat: AiChat|null = null;;
 }
