@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { AiChat, AIChats } from '../../../interfaces/ai-chat';
+import { AiChat, AiChats } from '../../../interfaces/ai-chat';
 import { AiService } from '../../../services/ai.service';
-import { randomInt } from 'crypto';
 
 @Component({
   selector: 'app-history',
@@ -21,7 +20,7 @@ export class HistoryComponent {
     user: 'User'
   };
 
-  aiChats: AIChats[] = [
+  aiChats: AiChats[] = [
     {
       id: 'UUID-UUID-UUID-UUID-UUID',
       title: "aaaa",

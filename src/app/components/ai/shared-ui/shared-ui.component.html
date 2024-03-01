@@ -12,7 +12,7 @@
             <app-results *ngFor="let chat of aiChats?.aiChat" [prompt]="chat.prompt"></app-results>
         </div>
         <div class="w-full flex items-center justify-center">
-            <app-chat-bar (promptSubmit)="prompt=$event"></app-chat-bar>
+            <app-chat-bar (promptSubmit)="addAiChat($event)"></app-chat-bar>
         </div>
     </div>
 </div>

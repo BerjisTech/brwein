@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { AIChats } from '../interfaces/ai-chat';
+import { AiChats } from '../interfaces/ai-chat';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +9,10 @@ export class AiService {
 
   constructor() { }
 
-  private chatSource = new BehaviorSubject<AIChats | null>(null);
+  private chatSource = new BehaviorSubject<AiChats | null>(null);
   currentChat = this.chatSource.asObservable();
 
-  changeChat(chat: AIChats) {
+  changeChat(chat: AiChats) {
     this.chatSource.next(chat);
   }
 }

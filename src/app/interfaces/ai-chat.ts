@@ -10,7 +10,7 @@ export interface AiChat {
     updated_at: string;
     user: User;
 }
-export interface AIChats{
+export interface AiChats{
     id: UUID;
     title: string;
     created_at: string;
