@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AIModuleRoutingModule } from './aimodule-routing.module';
+import { AIRoutingModule } from './aimodule-routing.module';
 
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    AIModuleRoutingModule
+    AIRoutingModule
   ]
 })
-export class AIModuleModule { }
+export class AIModule { }
