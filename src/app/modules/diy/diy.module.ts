@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SupplierRoutingModule } from './supplier-module-routing.module';
+import { DiyRoutingModule } from './diy-routing.module';
 
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    SupplierRoutingModule
+    DiyRoutingModule
   ]
 })
-export class SupplierModule { }
+export class DiyModule { }
