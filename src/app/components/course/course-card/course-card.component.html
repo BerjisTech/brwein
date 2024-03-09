@@ -1,4 +1,4 @@
-<div class="w-[300px] h-auto py-3 rounded-lg shadow-lg flex flex-col gap-2 items-center justify-center">
+<div class="w-[300px] h-auto py-3 rounded-lg shadow-lg flex flex-col gap-2 items-center justify-center cursor-pointer" (click)="loadCourse(course.id)">
     <div class="relative w-[290px] h-[300px] rounded-lg">
         <div class="w-full h-full flex items-center justify-center rounded-lg bg-cover bg-no-repeat backdrop-blur-2xl"
             [ngStyle]="{'background-image': 'url(' + course.poster + ')'}">
