@@ -1,1 +1,17 @@
-<p>courses works!</p>
+<div>
+    <div class="px-3 py-[50px] bg-blue-700 rounded-md text-white flex flex-col gap-10">
+        <div class="flex">
+            <div class="flex-grow flex flex-col gap-5">
+                <div class="font-black text-[40px]">Advertised Course</div>
+                <div class="">Advert text goes here because why would it not?</div>
+            </div>
+            <div class=""></div>
+        </div>
+        <div>
+            <a href="courses/1" class="bg-slate-950 text-slate-50 rounded-lg px-5 py-3">View Course</a>
+        </div>
+    </div>
+    <div class="flex gap-2">
+        <app-course-card *ngFor="let course of dummyCourses" [course]="course"></app-course-card>
+    </div>
+</div>

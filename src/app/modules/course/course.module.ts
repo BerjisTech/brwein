@@ -9,6 +9,7 @@ import { LessonComponent } from '../../components/course/lesson/lesson.component
 import { LessonsComponent } from '../../components/course/lessons/lessons.component';
 import { SettingsComponent } from '../../components/course/settings/settings.component';
 import { SearchComponent } from '../../components/course/search/search.component';
+import { CourseCardComponent } from '../../components/course/course-card/course-card.component';
 
 import { CourseRoutingModule } from './course-routing.module';
 
@@ -21,7 +22,8 @@ import { CourseRoutingModule } from './course-routing.module';
     LessonComponent,
     LessonsComponent,
     SettingsComponent,
-    SearchComponent
+    SearchComponent,
+    CourseCardComponent
   ],
   imports: [
     RouterModule,

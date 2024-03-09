@@ -23,7 +23,7 @@
                 <span class="material-icons"></span>
                 <input type="text" placeholder="Search for a course" class="flex-grow outline-none" />
                 <button class="material-icons">search</button>
-                <div
+                <div *ngIf="searchSuggestions"
                     class="absolute left-0 right-0 top-[110%] p-3 shadow-md rounded-lg h-[40vh] bg-white border-slate-200 border-1 w-full overflow-y-auto">
 
                 </div>
