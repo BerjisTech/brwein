@@ -35,5 +35,12 @@
         <div [ngClass]="{'p-1': true, 'bg-slate-800': true, 'rounded-full': true, 'w-full': course.progress === 100}"
             [ngStyle]="{'width.%': course.progress}"></div>
     </div>
-    <div class="flex w-[290px] items-center justify-between"></div>
+    <div class="flex w-[290px] items-center justify-between">
+        <div>
+            <span>Completed</span>:<span>{{ course.progress }}%</span>
+        </div>
+        <div>
+            <span>Days</span>:<span>10/30</span>
+        </div>
+    </div>
 </div>
