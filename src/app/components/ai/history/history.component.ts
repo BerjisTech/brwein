@@ -69,6 +69,5 @@ export class HistoryComponent {
 
   updateActiveChat(chat: AiChats) {
     this.aiService.changeChat(chat);
-    // this.aiService.addChat(chat);
   }
 }
