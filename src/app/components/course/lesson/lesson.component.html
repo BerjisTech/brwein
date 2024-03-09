@@ -1,1 +1,47 @@
-<p>lesson works!</p>
+<div class="flex gap-2">
+    <div class="flex-grow">
+        <div class="relative w-full rounded-lg h-[500px] bg-slate-400">
+            <span class="absolute rounded-full bg-yellow-300 py-1 px-4 top-2 left-2">Live</span>
+            <span class="absolute rounded-full bg-slate-950 text-slate-50 py-1 px-4 top-2 right-2">
+                <span class="flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined">visibility</span>
+                    22</span>
+            </span>
+            <div class="absolute rounded-full bottom-2 left-2 right-2">
+                <div class="flex items-center justify-between w-full gap-2">
+                    <button class="bg-slate-50 text-slate-950 rounded-full p-2 material-symbols-outlined">pause</button>
+                    <button class=" text-slate-50 rounded-full p-2 material-symbols-outlined">volume_up</button>
+                    <span>00:00</span>
+                    <div #videoProgress (click)="updateVideoProgressByClick($event, videoProgress)" class="flex-grow  bg-slate-900 rounded-full opacity-50 cursor-pointer">
+                        <div class="bg-white rounded-full p-1" [ngStyle]="{'width.%': distanceFrom100}"></div>
+                    </div>
+                    <button class=" text-slate-50 rounded-full p-2 material-symbols-outlined">settings</button>
+                    <button class=" text-slate-50 rounded-full p-2 material-symbols-outlined">replay</button>
+                    <button class=" text-slate-50 rounded-full p-2 material-symbols-outlined">picture_in_picture</button>
+                    <button class=" text-slate-50 rounded-full p-2 material-symbols-outlined">aspect_ratio</button>
+                </div>
+            </div>
+        </div>
+        <div>1. Concept Creation</div>
+        <div>A course by Opul Apul</div>
+        <hr />
+        <div>Next Lessons</div>
+        <div>
+            List of lessons here
+        </div>
+    </div>
+    <div class="w-[350px] h-auto">
+        <div class="h-[500px] w-full flex flex-col">
+            <div>Top Chat</div>
+            <div class="overflow-y-auto flex-grow h-[400px] bg-slate-200"></div>
+            <form class="flex items-center justify-center bg-white rounded-lg p-3">
+                <input type="text" class="flex-grow outline-none" placeholder="Type your message" />
+                <button class="material-symbols-outlined">send</button>
+            </form>
+        </div>
+        <div>
+            <div>Suggested Courses</div>
+            <div>List of suggested courses here</div>
+        </div>
+    </div>
+</div>

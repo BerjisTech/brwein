@@ -19,6 +19,7 @@ const routes: Routes = [
       { path: 'search', component: SearchComponent },
       { path: ':course_id', component: CourseComponent },
       { path: ':course_id/lessons', component: LessonsComponent },
+      { path: ':course_id/lessons/:lesson_id', component: LessonComponent },
       { path: ':course_id/lesson/:lesson_id', component: LessonComponent }
     ]
   }
