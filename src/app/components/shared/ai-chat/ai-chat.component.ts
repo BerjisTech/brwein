@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './ai-chat.component.scss'
 })
 export class AiChatComponent {
-
+  showChat :boolean = false;
 }
