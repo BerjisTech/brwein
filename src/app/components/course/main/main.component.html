@@ -6,13 +6,13 @@
         <div class="h-[80vh] w-full p-5 flex flex-col gap-3 items-center justify-start overflow-y-auto">
             <a href="courses" class="material-symbols-outlined">book</a>
             <a href="courses/1/lessons" class="material-symbols-outlined">library_books</a>
-            {{ hasCustomSidebar }}
         </div>
         <div class="h-[10vh] w-full flex items-center justify-center p-5">
             <a href="courses/settings" class="material-symbols-outlined">settings</a>
         </div>
     </div>
-    <div class="custom-width bg-slate-100 shadow-inner" style="--custom-px: {{custom_inner_pane_px}}px; --custom-vw: 100vw;">
+    <div class="custom-width bg-slate-100 shadow-inner"
+        style="--custom-px: {{custom_inner_pane_px}}px; --custom-vw: 100vw;">
         <div class="h-[10vh] w-full bg-slate-100 flex items-center justify-between p-5 gap-2">
             <div class="flex-grow flex flex-col gap-3">
                 <span class="font-black text-[30px]">Hello Buddy</span>
@@ -29,13 +29,11 @@
 
                 </div>
             </form>
-            <span class="material-symbols-outlined bg-white p-2 rounded-lg shadow-md">notifications</span>
+            <span class="material-symbols-outlined bg-white p-2 rounded-lg shadow-md cursor-pointer">notifications</span>
         </div>
         <div class="p-5 h-[90vh] overflow-y-auto overflow-x-hidden">
             <router-outlet></router-outlet>
         </div>
     </div>
-    <div *ngIf="!hasCustomSidebar" #customSideBar class="w-[300px] h-screen">
-        {{this.hasCustomSidebar}}
-    </div>
+    <div *ngIf="!hasCustomSidebar" class="w-[300px] h-screen bg-slate-950 text-slate-50"></div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener } from '@angular/core';
 import { UIService } from '../../../services/ui.service';
 
 @Component({
@@ -9,16 +9,27 @@ import { UIService } from '../../../services/ui.service';
 export class MainComponent {
 
   searchSuggestions: boolean = false;
-  hasCustomSidebar: boolean = true;
-  custom_inner_pane_px : number = 0;
+  hasCustomSidebar: boolean = false;
+  custom_inner_pane_px: number = 400;
 
-  constructor(private uiService: UIService) {
-    this.hasCustomSidebar = this.uiService.getCustomSideBar();
+  constructor(private uiService: UIService, private cdr: ChangeDetectorRef) { }
+
+  ngOnInit() {
+    this.uiService.showSidebar$.subscribe(showSidebar => {
+      this.hasCustomSidebar = showSidebar;
+      this.cdr.detectChanges();
+    });
+    if (!this.hasCustomSidebar) {
+      this.custom_inner_pane_px = this.uiService.getInnerPaneSize();
+    }else{
+      this.custom_inner_pane_px = 100;
+    }
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
-    this.custom_inner_pane_px = this.uiService.getCustomSideBar() ? 100 : 400;
-    this.hasCustomSidebar = this.uiService.getCustomSideBar();
+    if (!this.hasCustomSidebar) {
+      this.custom_inner_pane_px = this.uiService.getInnerPaneSize();
+    }
   }
 }

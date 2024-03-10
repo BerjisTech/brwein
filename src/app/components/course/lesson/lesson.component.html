@@ -1,8 +1,8 @@
 <div class="flex flex-col gap-2">
     <div class="flex gap-2 items-center content-center justify-between">
-        <div class="relative w-auto min-w-[900px] rounded-lg h-[500px] bg-slate-400">
-            <span class="absolute rounded-full bg-yellow-300 py-1 px-4 top-2 left-2">Live</span>
-            <span class="absolute rounded-full bg-slate-950 text-slate-50 py-1 px-4 top-2 right-2">
+        <div class="relative rounded-lg h-[500px] bg-slate-400 custom-width" style="--custom-vw: 100vw; --custom-px: 450px;">
+            <span class="cursor-none absolute rounded-full bg-yellow-300 py-1 px-4 top-2 left-2">Live</span>
+            <span class="cursor-none absolute rounded-full bg-slate-950 text-slate-50 py-1 px-4 top-2 right-2">
                 <span class="flex items-center justify-center gap-2">
                     <span class="material-symbols-outlined">visibility</span>
                     22</span>
@@ -34,8 +34,8 @@
             </form>
         </div>
     </div>
-    <div class="w-[350px] h-auto">
-        <div>
+    <div class="h-auto flex gap-2">
+        <div class="custom-width" style="--custom-vw: 100vw; --custom-px: 400px;">
             <div>1. Concept Creation</div>
             <div>A course by Opul Apul</div>
             <hr />
@@ -44,7 +44,7 @@
                 List of lessons here
             </div>
         </div>
-        <div>
+        <div class="w-[300px]">
             <div>Suggested Courses</div>
             <div>List of suggested courses here</div>
         </div>

@@ -8,10 +8,9 @@ import { UIService } from '../../../services/ui.service';
 })
 export class LessonComponent {
   distanceFrom100: number = 0;
-  hasCustomSideBar: boolean = true;
 
   constructor(private uiService: UIService) {
-    this.uiService.setCustomSideBar(this.hasCustomSideBar);
+    this.uiService.setCustomSideBar(true);
   }
 
   updateVideoProgressByClick(event: MouseEvent, element: HTMLElement) {
