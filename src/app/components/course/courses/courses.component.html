@@ -1,17 +1,122 @@
-<div class="w-full">
-    <div class="px-3 py-[50px] bg-blue-700 rounded-md text-white flex flex-col gap-10">
-        <div class="flex">
-            <div class="flex-grow flex flex-col gap-5">
-                <div class="font-black text-[40px]">Advertised Course</div>
-                <div class="">Advert text goes here because why would it not?</div>
+<div class="flex gap-3 flex-{{ flexDirection}}">
+    <div class="{{ growToFullWidth }}">
+        <!-- Greetings card -->
+        <div class="bg-red-50 rounded-lg p-2 flex items-center justify-between gap-3 mt-[200px]">
+            <div class="flex flex-col gap-4">
+                <div class="flex items-end justify-start text-[50px]">Hello Josh</div>
+                <span>It's good to see you again</span>
             </div>
-            <div class=""></div>
+            <div class="text-center w-[300px] h-[100px] scale-x-[-1] relative '">
+                <img src="/assets/images/avatar.jpg" alt="Achievement image"
+                    class="rounded-md w-[300px] bottom-0 absolute">
+            </div>
         </div>
+        <!-- End greetings card -->
+        <!-- Current courses progres card -->
+        <div class="my-2 rounded-lg p-2 flex items-center justify-center gap-3">
+            <div class="flex-grow bg-red-50 my-2 rounded-lg p-2 flex items-center justify-center gap-3">
+                <div class="w-[50px] h-[50px] rounded-full bg-center bg-cover bg-no-repeat"
+                    style="background: url('{{ currentCourse.poster }}')"></div>
+                <div class="flex-grow flex items-start justify-center flex-col">
+                    <span class="font-bold">{{ currentCourse.name }}</span>
+                    <span>by {{ currentCourse.organizer.name }}</span>
+                </div>
+                <div>
+                    {{ currentCourse.progress }}%
+                </div>
+                <div class="">
+                    <a href="/courses/{{ currentCourse.id  }}" target="_blank" rel="noreferrer"
+                        class="text-decoration-none text-slate-50 hover:text-slate-400 bg-slate-950 hover:bg-slate-800 rounded-md px-3 py-2">Continue</a>
+                </div>
+            </div>
+            <div class="flex items-center justify-center gap-2">
+                <button (click)="previousCourse()"
+                    class="flex items-center justify-center p-2 border border-solid border-slate-950 rounded-full">
+                    <span class="material-symbols-outlined">chevron_left</span>
+                </button>
+                <button (click)="nextCourse()"
+                    class="flex items-center justify-center p-2 border border-solid border-slate-950 rounded-full">
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </button>
+            </div>
+        </div>
+        <!-- End current courses progres card -->
+        <!-- Courses Tabs -->
         <div>
-            <a href="courses/1" class="bg-slate-950 text-slate-50 rounded-lg px-5 py-3">View Course</a>
+            <div class="font-bold text-[30px]">Courses</div>
+            <div class="flex items-center justify-start gap-5">
+                <div class="font-bold" [ngClass]="{'text-slate-400': !my_courses}" role="button"
+                    (click)="setActive('all_courses')">My Courses</div>
+                    <div class="font-bold" [ngClass]="{'text-slate-400': !all_courses}" role="button"
+                        (click)="setActive('all_courses')">All Courses</div>
+                <div class="font-bold" [ngClass]="{'text-slate-400': !new_courses}" role="button"
+                    (click)="setActive('new_courses')">New Courses</div>
+                <div class="font-bold" [ngClass]="{'text-slate-400': !top_rated}" role="button"
+                    (click)="setActive('top_rated')">Top Rated</div>
+                <div class="font-bold" [ngClass]="{'text-slate-400': !most_popular}" role="button"
+                    (click)="setActive('most_popular')">Most Popular</div>
+            </div>
         </div>
+        <div class="w-[100%] flex flex-col">
+            <app-course-card *ngFor="let course of myCourses" [course]="course"></app-course-card>
+        </div>
+        <!-- End courses Tabs -->
     </div>
-    <div class="flex gap-2 overflow-x-auto w-full">
-        <app-course-card *ngFor="let course of dummyCourses" [course]="course"></app-course-card>
+    <div class="{{ growToFullWidth }} flex flex-col gap-3">
+        <!-- Course progres cards -->
+        <div class="flex gap-3">
+            <div class="{{ growToFullWidth }}">
+                <div class="bg-slate-200/70 rounded-lg flex items-center justify-center gap-3 font-bold py-5">
+                    <div class="text-[50px]">{{ completedCoursesCount }}</div>
+                    <div class="flex items-start justify-center flex-col">
+                        <span>Courses</span>
+                        <span>completed</span>
+                    </div>
+                </div>
+            </div>
+            <div class="{{ growToFullWidth }}">
+                <div class="bg-slate-200/70 rounded-lg flex items-center justify-center gap-3 font-bold py-5">
+                    <div class="text-[50px]">{{ inProgressCoursesCount }}</div>
+                    <div class="flex items-start justify-center flex-col">
+                        <span>Courses</span>
+                        <span>in progress</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End course progres cards -->
+
+        <!-- Course stats -->
+        <div class="flex flex-col gap-3">
+            <div class="font-bold text-[30px]">Course Statistics</div>
+            <div class="flex items-center justify-start gap-5">
+                <div class="font-bold" [ngClass]="{'text-slate-400': active_stats_tab != 'learning_hours'}"
+                    role="button" (click)="active_stats_tab = 'learning_hours'">Learning Hours</div>
+                <div class="font-bold" [ngClass]="{'text-slate-400': active_stats_tab != 'my_courses'}" role="button"
+                    (click)="active_stats_tab = 'my_courses'">My Courses</div>
+            </div>
+            <div *ngIf="active_stats_tab == 'learning_hours'">
+                Learning Hours
+                <app-course-stats [data]="learningHoursData" [x_axis_label]="''" [y_axis_label]="''"></app-course-stats>
+            </div>
+            <div *ngIf="active_stats_tab == 'my_courses'">
+                My courses
+                <app-course-stats [data]="myCoursesData" [x_axis_label]="''" [y_axis_label]="''"></app-course-stats>
+            </div>
+        </div>
+        <!-- End course stats -->
+
+        <!-- Upgrade CTA -->
+        <div class="bg-slate-200/70 rounded-lg p-5 flex-wrap flex items-center justify-between mb-[50px]">
+            <div class="flex items-start justify-center flex-col gap-3 font-bold">
+                <span class="text-[20px]">Learn even more!</span>
+                <span>Unlock premium features for only Kes 49.99</span>
+                <a href="" class="bg-slate-950 text-slate-200 rounded-md text-decoration-none py-3 px-4">Go Premium</a>
+            </div>
+            <div>
+                <img src="/assets/images/brain_book.png" class="w-[200px]" />
+            </div>
+        </div>
+        <!-- End Upgrade CTA -->
     </div>
 </div>

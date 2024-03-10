@@ -10,8 +10,10 @@ import { LessonsComponent } from '../../components/course/lessons/lessons.compon
 import { SettingsComponent } from '../../components/course/settings/settings.component';
 import { SearchComponent } from '../../components/course/search/search.component';
 import { CourseCardComponent } from '../../components/course/course-card/course-card.component';
+import { CourseStatsComponent } from '../../components/course/course-stats/course-stats.component';
 
 import { CourseRoutingModule } from './course-routing.module';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 @NgModule({
@@ -23,12 +25,14 @@ import { CourseRoutingModule } from './course-routing.module';
     LessonsComponent,
     SettingsComponent,
     SearchComponent,
-    CourseCardComponent
+    CourseCardComponent,
+    CourseStatsComponent
   ],
   imports: [
     RouterModule,
     CommonModule,
-    CourseRoutingModule
+    CourseRoutingModule,
+    NgxChartsModule
   ]
 })
 export class CourseModule { }

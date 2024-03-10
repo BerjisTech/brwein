@@ -1,46 +1,14 @@
-<div class="w-[300px] h-auto py-3 rounded-lg shadow-lg flex flex-col gap-2 items-center justify-center cursor-pointer" (click)="loadCourse(course.id)">
-    <div class="relative w-[290px] h-[300px] rounded-lg">
-        <div class="w-full h-full flex items-center justify-center rounded-lg bg-cover bg-no-repeat backdrop-blur-2xl"
-            [ngStyle]="{'background-image': 'url(' + course.poster + ')'}">
-            <img src="{{ course.poster }}" alt="course image"
-                class="w-auto max-w-full h-auto max-h-full object-cover" />
-
-        </div>
-
-        <span class="absolute right-1 bottom-1 rounded-full bg-slate-900 text-slate-50 px-3 py-2">{{ course.level
-            }}</span>
+<div class="bg-red-50 hover:shadow-lg my-2 rounded-lg p-2 flex items-center justify-center gap-3 w-[100%]" role="button" (click)="loadCourse(course.id)">
+    <div class="w-[50px] h-[50px] rounded-full bg-center bg-cover bg-no-repeat"
+        style="background: url('{{ course.poster}}')"></div>
+    <div class="flex-grow gap-2 flex align-items-start justify-content-center flex-col">
+        <span class="font-bold">{{ course.name}}</span>
+        <span>by {{ course.organizer.name }}</span>
     </div>
-    <div class="flex w-[290px] items-center">
-        <div class="flex-grow flex flex-col items-start justify-center">
-            <span>{{ course.name }}</span>
-            <span>{{ course.organizer.name }}</span>
-        </div>
-        <img src="{{ course.organizer.avatar }}" class="rounded-full w-[30px] h-[30px]" alt="" />
-    </div>
-    <div class="flex w-[290px] items-center justify-between">
-        <div class="flex items-center">
-            <span class="material-symbols-outlined">description</span>
-            <span>{{ course.lessons.length }}</span>
-        </div>
-        <div class="flex items-center">
-            <span class="material-symbols-outlined">quiz</span>
-            <span>{{ course.lessons.length }}</span>
-        </div>
-        <div class="flex items-center">
-            <span class="material-symbols-outlined">group</span>
-            <span>{{ course.lessons.length }}</span>
-        </div>
-    </div>
-    <div class="w-[290px]">
-        <div [ngClass]="{'p-1': true, 'bg-slate-800': true, 'rounded-full': true, 'w-full': course.progress === 100}"
-            [ngStyle]="{'width.%': course.progress}"></div>
-    </div>
-    <div class="flex w-[290px] items-center justify-between">
-        <div>
-            <span>Completed</span>:<span>{{ course.progress }}%</span>
-        </div>
-        <div>
-            <span>Days</span>:<span>10/30</span>
-        </div>
+    <div class="font-bold">6h 20min</div>
+    <div>{{ course.rating }}</div>
+    <div class="">
+        <a href="/courses/{{ course.id }}"
+            class="text-decoration-none text-slate-50 hover:text-slate-400 bg-slate-950 hover:bg-slate-800 rounded-md px-3 py-2">Continue</a>
     </div>
 </div>

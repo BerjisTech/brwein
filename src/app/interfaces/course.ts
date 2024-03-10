@@ -10,6 +10,7 @@ export interface Course {
     organizer: User;
     progress: number;
     poster: string;
+    rating: number;
 }
 
 export interface Lesson {

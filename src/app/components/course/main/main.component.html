@@ -22,7 +22,7 @@
                 class="relative flex items-center justify-center bg-white p-2 rounded-lg shadow-md w-auto min-w-[300px]"
                 action="courses/search">
                 <span class="material-icons"></span>
-                <input type="text" placeholder="Search for a course" class="flex-grow outline-none" />
+                <input type="text" (input)="onSearchInput($event)" placeholder="Search for a course" class="flex-grow outline-none" />
                 <button class="material-icons">search</button>
                 <div *ngIf="searchSuggestions"
                     class="absolute left-0 right-0 top-[110%] p-3 shadow-md rounded-lg h-[40vh] bg-white border-slate-200 border-1 w-full overflow-y-auto">
@@ -35,5 +35,5 @@
             <router-outlet></router-outlet>
         </div>
     </div>
-    <div *ngIf="!hasCustomSidebar" class="w-[300px] h-screen bg-slate-950 text-slate-50"></div>
+    <div *ngIf="!hasCustomSidebar && showSideBar" class="w-[300px] h-screen bg-slate-950 text-slate-50"></div>
 </div>
