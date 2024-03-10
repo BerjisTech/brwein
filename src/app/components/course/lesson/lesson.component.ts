@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
+import { UIService } from '../../../services/ui.service';
 
 @Component({
   selector: 'app-lesson',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class LessonComponent {
   distanceFrom100: number = 0;
+  hasCustomSideBar: boolean = true;
+
+  constructor(private uiService: UIService) {
+    this.uiService.setCustomSideBar(this.hasCustomSideBar);
+  }
+
   updateVideoProgressByClick(event: MouseEvent, element: HTMLElement) {
     const rect = element.getBoundingClientRect();
     const x = event.clientX - rect.left;

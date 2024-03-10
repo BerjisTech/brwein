@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, HostListener} from '@angular/core';
 
 import { Course, Lesson } from '../../../interfaces/course';
 import { UserService } from '../../../services/user.service';
+import { UIService } from '../../../services/ui.service';
 
 @Component({
   selector: 'app-courses',
@@ -9,8 +10,24 @@ import { UserService } from '../../../services/user.service';
   styleUrl: './courses.component.scss'
 })
 export class CoursesComponent {
+  screenWidth: number = 0;
+  hasCustomSidebar: boolean = false;
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private uiService: UIService,
+    private userService: UserService
+  ) {
+    this.hasCustomSidebar = this.uiService.getCustomSideBar();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.screenWidth = window.innerWidth;
+    this.hasCustomSidebar = this.screenWidth < 900;
+    this.uiService.setCustomSideBar(this.hasCustomSidebar);
+    console.log(this.screenWidth);
+    console.log(this.hasCustomSidebar);
+  }
 
   randomNumber = Math.floor(Math.random() * 100);
   dummyLessons: Lesson[] = [
