@@ -33,7 +33,7 @@
                     class="w-[150px] h-[150px] rounded-xl relative bg-cover cursor-pointer"
                     style="background-image: url({{attendee.avatar}})">
                     <span
-                        class="absolute top-1 left-1 bg-slate-50 p-2 rounded-full text-slate-900 bg-opacity-50">{{attendee.name}}</span>
+                        class="absolute top-1 left-1 bg-slate-50 px-2 rounded-full text-slate-900 bg-opacity-80">{{attendee.name}}</span>
                 </div>
                 <div class="w-[150px] h-[150px] rounded-xl flex flex-grow flex-wrap gap-2">
                     <div *ngFor="let attendee of lessonAttendees | slice:attendeesToShow:attendeesToShow+3"
@@ -49,7 +49,7 @@
                 </div>
             </div>
         </div>
-        <div class="h-[650px] flex flex-col w-[300px]">
+        <div class="h-[650px] flex flex-col w-[300px] sticky">
             <div>Top Chat</div>
             <div class="overflow-y-auto flex-grow bg-slate-200"></div>
             <form class="flex items-center justify-center bg-white rounded-lg p-3">
