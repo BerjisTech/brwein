@@ -41,4 +41,25 @@ export class UserService {
   getGuestUser(): User {
     return this.guestUser;
   }
+
+  generateRandomServices(number_of_users_toGenerate :number = 5){
+    let users: User[] = [];
+    for (let i = 0; i < number_of_users_toGenerate; i++) {
+      users.push({
+        id: 'UUID-UUID-UUID-UUID-UUID-UUID',
+        name: 'John Doe',
+        avatar: `https://picsum.photos/300/300?random=${i + 1}`,
+        email: 'string',
+        email_verified_at: 'string',
+        created_at: 'string',
+        updated_at: 'string',
+        role: 'string',
+        password: 'string',
+        remember_token: 'string',
+        bio: 'string',
+        location: 'string',
+      });
+    }
+    return users;
+  }
 }

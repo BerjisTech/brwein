@@ -1,33 +1,57 @@
 <div class="flex flex-col gap-2">
-    <div class="flex gap-2 items-center content-center justify-between">
-        <div class="relative rounded-lg h-[500px] bg-slate-400 custom-width" style="--custom-vw: 100vw; --custom-px: 450px;">
-            <span class="cursor-none absolute rounded-full bg-yellow-300 py-1 px-4 top-2 left-2">Live</span>
-            <span class="cursor-none absolute rounded-full bg-slate-950 text-slate-50 py-1 px-4 top-2 right-2">
-                <span class="flex items-center justify-center gap-2">
-                    <span class="material-symbols-outlined">visibility</span>
-                    22</span>
-            </span>
-            <div class="absolute rounded-full bottom-2 left-2 right-2">
-                <div class="flex items-center justify-between w-full gap-2">
-                    <button class="bg-slate-50 text-slate-950 rounded-full p-2 material-symbols-outlined">pause</button>
-                    <button class=" text-slate-50 rounded-full p-2 material-symbols-outlined">volume_up</button>
-                    <span>00:00</span>
-                    <div #videoProgress (click)="updateVideoProgressByClick($event, videoProgress)"
-                        class="flex-grow  bg-slate-900 rounded-full opacity-50 cursor-pointer">
-                        <div class="bg-white rounded-full p-1" [ngStyle]="{'width.%': distanceFrom100}"></div>
+    <div class="flex gap-2 items-start content-center justify-between">
+        <div class="flex flex-col gap-2 custom-width" style="--custom-vw: 100vw; --custom-px: 450px;">
+            <div class="relative rounded-lg h-[500px] bg-slate-400">
+                <span class="cursor-none absolute rounded-full bg-yellow-300 py-1 px-4 top-2 left-2">Live</span>
+                <span class="cursor-none absolute rounded-full bg-slate-950 text-slate-50 py-1 px-4 top-2 right-2">
+                    <span class="flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined">visibility</span>
+                        22</span>
+                </span>
+                <div class="absolute rounded-full bottom-2 left-2 right-2">
+                    <div class="flex items-center justify-between w-full gap-2">
+                        <button
+                            class="bg-slate-50 text-slate-950 rounded-full p-2 material-symbols-outlined">pause</button>
+                        <button class=" text-slate-50 rounded-full p-2 material-symbols-outlined">volume_up</button>
+                        <span>00:00</span>
+                        <div #videoProgress (click)="updateVideoProgressByClick($event, videoProgress)"
+                            class="flex-grow  bg-slate-900 rounded-full opacity-50 cursor-pointer">
+                            <div class="bg-white rounded-full p-1" [ngStyle]="{'width.%': distanceFrom100}"></div>
+                        </div>
+                        <button class=" text-slate-50 rounded-full p-2 material-symbols-outlined">settings</button>
+                        <button class=" text-slate-50 rounded-full p-2 material-symbols-outlined">replay</button>
+                        <button
+                            class=" text-slate-50 rounded-full p-2 material-symbols-outlined">picture_in_picture</button>
+                        <button class=" text-slate-50 rounded-full p-2 material-symbols-outlined">crop_3_2</button>
+                        <button class=" text-slate-50 rounded-full p-2 material-symbols-outlined">aspect_ratio</button>
                     </div>
-                    <button class=" text-slate-50 rounded-full p-2 material-symbols-outlined">settings</button>
-                    <button class=" text-slate-50 rounded-full p-2 material-symbols-outlined">replay</button>
-                    <button
-                        class=" text-slate-50 rounded-full p-2 material-symbols-outlined">picture_in_picture</button>
-                    <button class=" text-slate-50 rounded-full p-2 material-symbols-outlined">crop_3_2</button>
-                    <button class=" text-slate-50 rounded-full p-2 material-symbols-outlined">aspect_ratio</button>
+                </div>
+            </div>
+            <div>Showing {{ attendeesToShow }} of {{ lessonAttendees.length }} attendees</div>
+            <div #lessonAttendeesPane class="flex gap-2 items-center justify-between" (waResizeObserver)="onResize()">
+                <div *ngFor="let attendee of lessonAttendees | slice:0:attendeesToShow"
+                    class="w-[150px] h-[150px] rounded-xl relative bg-cover cursor-pointer"
+                    style="background-image: url({{attendee.avatar}})">
+                    <span
+                        class="absolute top-1 left-1 bg-slate-50 p-2 rounded-full text-slate-900 bg-opacity-50">{{attendee.name}}</span>
+                </div>
+                <div class="w-[150px] h-[150px] rounded-xl flex flex-grow flex-wrap gap-2">
+                    <div *ngFor="let attendee of lessonAttendees | slice:attendeesToShow:attendeesToShow+3"
+                        class="rounded-full w-[70px] h-[70px] bg-cover cursor-pointer"
+                        style="background-image: url({{attendee.avatar}})">
+                    </div>
+                    <div
+                        class="flex items-center justify-center w-[70px] h-[70px] bg-slate-900 text-slate-50 rounded-full font-light text-lg cursor-pointer">
+                        +{{ lessonAttendees.length -
+                        attendeesToShow-3
+                        }}
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="h-[500px] flex flex-col w-[300px]">
+        <div class="h-[650px] flex flex-col w-[300px]">
             <div>Top Chat</div>
-            <div class="overflow-y-auto flex-grow h-[400px] bg-slate-200"></div>
+            <div class="overflow-y-auto flex-grow bg-slate-200"></div>
             <form class="flex items-center justify-center bg-white rounded-lg p-3">
                 <input type="text" class="flex-grow outline-none" placeholder="Type your message" />
                 <button class="material-symbols-outlined">send</button>

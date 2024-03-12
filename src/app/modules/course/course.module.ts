@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ResizeObserverModule } from '@ng-web-apis/resize-observer';
 
 import { MainComponent } from '../../components/course/main/main.component';
 import { CoursesComponent } from '../../components/course/courses/courses.component';
@@ -32,7 +33,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     RouterModule,
     CommonModule,
     CourseRoutingModule,
-    NgxChartsModule
+    NgxChartsModule,
+    ResizeObserverModule 
   ]
 })
 export class CourseModule { }
