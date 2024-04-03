@@ -1,1 +1,60 @@
-<p>main works!</p>
+<div class="w-screen h-screen overflow-hidden">
+    <div class="h-[70px] border-b-1 border-solid border-slate-100 "></div>
+    <div class="flex custom-height w-screen overflow-hidden" style="--custom-vh: 100vh; --custom-px: 70px;">
+        <div class="w-[300px] custom-height" style="--custom-vh: 100vh; --custom-px: 70px;"></div>
+        <div class="border-x-1 border-solid border-slate-100 flex-grow flex flex-col custom-height"
+            style="--custom-vh: 100vh; --custom-px: 70px;">
+            <div class="custom-height overflow-y-auto" style="--custom-vh: 100vh; --custom-px: 170px;"></div>
+            <div class="flex h-[100px]">
+                <form class="flex gap-2 p-2 w-full">
+                    <img src="/assets/images/avatar.jpg" alt="emoji" class="w-[50px] h-[50px] rounded-full">
+                    <div class="flex flex-col gap-2 flex-grow">
+                        <div class="rounded-xl px-2 bg-slate-100 flex items-center justify-center gap-2">
+                            <input type="text" class="p-3 flex-grow bg-transparent outline-none"
+                                placeholder="Type your message...">
+                            <button type="submit" class="bg-slate-100 hover:bg-slate-200 rounded-full">
+                                <span class="w-[20px] h-[20px] material-symbols-outlined">send</span>
+                            </button>
+                        </div>
+                        <div class="flex">
+                            <div class="flex flex-grow gap-2">
+                                <button type="button"
+                                    class="w-[30px] h-[30px] p-2 flex items-center justify-center bg-slate-100 hover:bg-slate-200 rounded-full">
+                                    <span class="material-symbols-outlined font-light text-[20px]">image</span>
+                                </button>
+                                <button type="button"
+                                    class="w-[30px] h-[30px] p-2 flex items-center justify-center bg-slate-100 hover:bg-slate-200 rounded-full">
+                                    <span class="material-symbols-outlined font-light text-[20px]">description</span>
+                                </button>
+                                <button type="button"
+                                    class="w-[30px] h-[30px] p-2 flex items-center justify-center bg-slate-100 hover:bg-slate-200 rounded-full">
+                                    <span class="material-symbols-outlined font-light text-[20px]">videocam</span>
+                                </button>
+                                <button type="button"
+                                    class="w-[30px] h-[30px] p-2 flex items-center justify-center bg-slate-100 hover:bg-slate-200 rounded-full">
+                                    <span class="material-symbols-outlined font-light text-[20px]">bar_chart</span>
+                                </button>
+                            </div>
+                            <!-- Public or private dropdown -->
+                            <div class="flex gap-2">
+                                <div class="relative">
+                                    <button type="button"
+                                        class="w-[30px] h-[30px] p-2 flex items-center justify-center bg-slate-100 hover:bg-slate-200 rounded-full">
+                                        <span class="material-symbols-outlined font-light text-[20px]">public</span>
+                                    </button>
+                                    <div class="absolute top-[40px] left-0 w-[100px] bg-slate-100 rounded-lg shadow-lg">
+                                        <ul class="p-2">
+                                            <li class="hover:bg-slate-200 rounded-lg p-2">Public</li>
+                                            <li class="hover:bg-slate-200 rounded-lg p-2">Private</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="w-[300px] custom-height" style="--custom-vh: 100vh; --custom-px: 70px;"></div>
+    </div>
+</div>
