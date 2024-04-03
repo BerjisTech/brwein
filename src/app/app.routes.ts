@@ -6,6 +6,8 @@ export const routes: Routes = [
     { path: 'course', loadChildren: () => import('./modules/course/course.module').then(m => m.CourseModule) },
     { path: 'courses', loadChildren: () => import('./modules/course/course.module').then(m => m.CourseModule) },
     { path: 'suppliers', loadChildren: () => import('./modules/supplier/supplier.module').then(m => m.SupplierModule) },
+    { path: 'forums', loadChildren: () => import('./modules/forum/forum.module').then(m => m.ForumModule) },
+    { path: 'library', loadChildren: () => import('./modules/library/library.module').then(m => m.LibraryModule) },
     { path: '', loadChildren: () => import('./modules/nliv/nliv.module').then(m => m.NLIVModule) },
     { path: '**', redirectTo: '404' }
 ];
