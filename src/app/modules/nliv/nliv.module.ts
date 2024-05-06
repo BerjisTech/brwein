@@ -11,9 +11,7 @@ import { NotFoundComponent } from '../../components/nliv/not-found/not-found.com
 import { Error500Component } from '../../components/nliv/error500/error500.component';
 import { GlobalSearchComponent } from '../../components/nliv/global-search/global-search.component';
 import { SharedLayoutComponent } from '../../components/nliv/shared-layout/shared-layout.component';
-import { UserActionsComponent } from '../../components/shared/user-actions/user-actions.component';
-import { GlobalSearchResultsComponent } from '../../components/shared/global-search-results/global-search-results.component';
-import { AiChatComponent } from '../../components/shared/ai-chat/ai-chat.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -25,14 +23,12 @@ import { AiChatComponent } from '../../components/shared/ai-chat/ai-chat.compone
     Error500Component,
     GlobalSearchComponent,
     SharedLayoutComponent,
-    UserActionsComponent,
-    GlobalSearchResultsComponent,
-    AiChatComponent
   ],
   imports: [
     RouterModule,
     CommonModule,
-    NLIVRoutingModule
+    NLIVRoutingModule,
+    SharedModule
   ]
 })
 export class NLIVModule { }

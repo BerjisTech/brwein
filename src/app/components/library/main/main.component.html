@@ -1,1 +1,18 @@
-<p>main works!</p>
+<div class="flex items-start content-start justify-start w-screen h-screen overflow-hidden relative">
+    
+    <div class="absolute top-0 right-0 h-[50vh] custom-width rounded-bl-[100px] bg-orange-200" style="--custom-vw: 100vw; --custom-px: 450px;"></div>
+    <div class="absolute top-0 right-0 h-[70vh] w-[20vw] bg-orange-900 bg-opacity-45"></div>
+    <div class="flex flex-col items-start content-start justify-start w-[300px] h-screen overflow-y-auto">
+        <app-library-nav></app-library-nav>
+    </div>
+    <div class="overflow-hidden custom-width h-screen" style="--custom-vw: 100vw; --custom-px: 300px;">
+        <div class="w-full h-[70px]">
+            <app-user-actions></app-user-actions>
+        </div>
+        <div class="w-full custom-height overflow-y-auto" style="--custom-vh: 100vh; --custom-px: 70px;">
+            <div class="w-full h-auto min-h-[40px]">
+
+            </div>
+        </div>
+    </div>
+</div>
