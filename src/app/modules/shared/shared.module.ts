@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AiChatComponent } from '../../components/shared/ai-chat/ai-chat.component';
 import { UserActionsComponent } from '../../components/shared/user-actions/user-actions.component';
-import { GlobalSearchComponent } from '../../components/nliv/global-search/global-search.component';
+import { GlobalSearchResultsComponent } from '../../components/shared/global-search-results/global-search-results.component';
 
 
 
@@ -10,7 +10,7 @@ import { GlobalSearchComponent } from '../../components/nliv/global-search/globa
   declarations: [
     AiChatComponent,
     UserActionsComponent,
-    GlobalSearchComponent
+    GlobalSearchResultsComponent
   ],
   imports: [
     CommonModule
@@ -18,7 +18,7 @@ import { GlobalSearchComponent } from '../../components/nliv/global-search/globa
   exports: [
     AiChatComponent,
     UserActionsComponent,
-    GlobalSearchComponent
+    GlobalSearchResultsComponent
   ]
 })
 export class SharedModule { }

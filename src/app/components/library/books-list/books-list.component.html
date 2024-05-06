@@ -1,1 +1,14 @@
-<p>books-list works!</p>
+<div class="px-4 py-5">
+    <div class="flex items-center content-center justify-center gap-3">
+        <div class="text-2xl">Book Recomemndetion</div>
+        <div class="flex-grow"></div>
+        <span role="button">View All</span>
+        <span class="material-symbols-outlined" role="button">cards</span>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <div *ngFor="let book of books"
+            class="bg-slate-50 rounded-md p-5 flex flex-col items-start content-start justify-start gap-5">
+            <app-book-card [book]="book"></app-book-card>
+        </div>
+    </div>
+</div>div>
