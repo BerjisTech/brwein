@@ -1,4 +1,4 @@
-<div class="w-full custom-height overflow-y-auto px-5" style="--custom-vh: 100vh; --custom-px: 70px;">
+
     <div class="flex gap-3">
         <div class="w-1/2 h-[300px]"></div>
         <div class="w-1/2 flex flex-col gap-4">
@@ -25,16 +25,16 @@
         </div>
         <div class="w-1/2 flex flex-col items-center content-center justify-center gap-8">
             <div class="w-4/5 flex items-center content-center justify-center">
-                <a href="/library/book/{{ book?.slag }}/read"
+                <a href="/library/book/{{ book?.slag }}/read/cover"
                     class="flex items-center content-center justify-center bg-slate-950 text-white px-5 py-2 rounded-3xl"
                     role="button">
                     Start Reading <span class="material-symbols-outlined">arrow_outward</span>
                 </a>
                 <span class="flex-grow"></span>
                 <!-- Bookmark, share, download icons -->
-                <span class="material-symbols-outlined">bookmark</span>
-                <span class="material-symbols-outlined">share</span>
-                <span class="material-symbols-outlined">download</span>
+                <span class="material-symbols-outlined" role="button">bookmark</span>
+                <span class="material-symbols-outlined" role="button">share</span>
+                <span class="material-symbols-outlined" role="button">download</span>
             </div>
             <hr />
             <div class="w-2/4 flex flex-col gap-5">
@@ -47,4 +47,3 @@
             </div>
         </div>
     </div>
-</div>
