@@ -1,6 +1,11 @@
 export interface Book {
     title: string;
-    author?: string;
+    slag: string;
+    short_description?: string;
+    long_description?: string;
+    author_avatar?: string;
+    author_name?: string;
+    author_short_bio?: string;
     cover: string;
     description?: string;
     price?: number;
@@ -20,4 +25,6 @@ export interface Book {
     available?: boolean;
     sale?: boolean;
     salePrice?: number;
+    editors?: string[];
+    paperback?: string;
 }
