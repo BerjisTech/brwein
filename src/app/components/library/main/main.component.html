@@ -12,7 +12,10 @@
         </div>
         <div class="w-full custom-height overflow-y-auto" style="--custom-vh: 100vh; --custom-px: 70px;">
             <app-books-search></app-books-search>
-            <app-books-list></app-books-list>
+            <app-books-list pageTitle="Book Recomendation" [books]="dummyBooks(4)"></app-books-list>
+            <app-books-list pageTitle="Popular Books" [books]="dummyBooks(8)"></app-books-list>
+            <app-books-list pageTitle="New Books" [books]="dummyBooks(6)"></app-books-list>
+            
         </div>
     </div>
 </div>

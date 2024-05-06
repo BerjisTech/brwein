@@ -1,14 +1,13 @@
 <div class="px-4 py-5">
-    <div class="flex items-center content-center justify-center gap-3">
-        <div class="text-2xl">Book Recomemndetion</div>
+    <div class="flex items-center content-center justify-center gap-3 my-3">
+        <div class="text-2xl">{{ pageTitle }}</div>
         <div class="flex-grow"></div>
-        <span role="button">View All</span>
-        <span class="material-symbols-outlined" role="button">cards</span>
+        <span class="bg-slate-50 rounded-md text-lg px-2" role="button">View All</span>
+        <span class="bg-slate-50 rounded-md text-2xl px-2 material-symbols-outlined" role="button">page_info</span>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-        <div *ngFor="let book of books"
-            class="bg-slate-50 rounded-md p-5 flex flex-col items-start content-start justify-start gap-5">
+    <div class="flex gap-3 flex-row flex-wrap w-full items-start content-start justify-between">
+        <div *ngFor="let book of books">
             <app-book-card [book]="book"></app-book-card>
         </div>
     </div>
-</div>div>
+</div>

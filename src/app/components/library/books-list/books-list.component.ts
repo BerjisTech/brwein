@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Book } from '../../../interfaces/book';
 
 @Component({
   selector: 'app-books-list',
@@ -7,36 +8,28 @@ import { Component } from '@angular/core';
 })
 export class BooksListComponent {
   // Array of books
-  books = [
+  @Input() books : Book[] = [
     {
-      title: 'The Alchemist',
-    },
-    {
-      title: 'The Little Prince',
-    },
-    {
-      title: 'The Da Vinci Code',
-    },
-    {
-      title: 'The Hobbit',
+      title: 'The Great Gatsby',
+      cover: 'https://www.rockingbookcovers.com/wp-content/uploads/2021/01/No-One-Close.jpg'
     },
     {
       title: 'The Catcher in the Rye',
+      cover: 'https://www.rockingbookcovers.com/wp-content/uploads/2022/09/Dont-Let-Me-In.jpg'
     },
     {
-      title: 'The Great Gatsby',
+      title: 'To Kill a Mockingbird',
+      cover: 'https://www.rockingbookcovers.com/wp-content/uploads/2023/03/Dont-Go-There.jpg'
     },
     {
-      title: 'The Lion, the Witch and the Wardrobe',
+      title: '1984',
+      cover: 'https://www.rockingbookcovers.com/wp-content/uploads/2024/01/When-I-Find-You.jpg'
     },
     {
-      title: 'The Lord of the Rings',
+      title: 'Animal Farm',
+      cover: 'https://www.rockingbookcovers.com/wp-content/uploads/2023/02/You-Shouldnt-Have.jpg'
     },
-    {
-      title: 'The Chronicles of Narnia',
-    },
-    {
-      title: 'The Hitchhiker\'s Guide to the Galaxy',
-    },
-  ]
+  ];
+
+  @Input() pageTitle: string = 'Book Recomendations';
 }
