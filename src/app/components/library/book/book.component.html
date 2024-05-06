@@ -2,8 +2,8 @@
     <div class="flex gap-3">
         <div class="w-1/2 h-[300px]"></div>
         <div class="w-1/2 flex flex-col gap-4">
-            <span class="text-3xl">{{ book?.title }}</span>
-            <span class="font-semibold">{{ book?.author_name }}</span>
+            <span class="text-7xl font-thin">{{ book?.title }}</span>
+            <span class="text-2xl font-thin">{{ book?.author_name }}</span>
             <span>{{ book?.short_description }}</span>
         </div>
     </div>
@@ -13,13 +13,13 @@
                 <div class="absolute bottom-0 bg-cover bg-no-repeat bg-center right-[30%] w-[350px] h-[500px] table"
                     [style.backgroundImage]="'url(' + book?.cover + ')'"></div>
             </div>
-            <span class="text-2xl">Description</span>
-            <span>{{ book?.long_description }}</span>
+            <span class="text-3xl font-thin">Description</span>
+            <span class="font-thin">{{ book?.long_description }}</span>
             <div class="flex items-start justify-start gap-2">
-                <img src="{{ book?.author_avatar }}" class="w-20 h-20 rounded-full" />
+                <img src="{{ book?.author_avatar }}" class="w-[50px] h-[50px] rounded-full" />
                 <div class="flex flex-col gap-2">
-                    <span class="font-bold">{{ book?.author_name }}</span>
-                    <span>{{ book?.author_short_bio }}</span>
+                    <span class="text-2xl font-thin">{{ book?.author_name }}</span>
+                    <span class="font-thin">{{ book?.author_short_bio }}</span>
                 </div>
             </div>
         </div>
